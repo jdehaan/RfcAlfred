@@ -533,6 +533,8 @@ namespace Rfc {
 		{
 			get
 			{
+				if (keywords == null || keywords.Length == 0)
+					return String.Empty;
 				return String.Join(";", keywords);
 			}
 		}
