@@ -1,0 +1,8 @@
+ftp://ftp.rfc-editor.org/in-notes/rfc-index.xml
+ftp://ftp.rfc-editor.org/in-notes/rfc-index.xsd
+
+// read-only display & binding
+xsd rfc-index.xsd /classes /namespace:Rfc
+
+// for read/write bindings
+xsd rfc-index.xsd /classes /namespace:Rfc /edb
