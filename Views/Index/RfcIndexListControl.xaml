@@ -15,10 +15,18 @@
             >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="RFC" Width="80" DisplayMemberBinding="{Binding docid}" />
-                    <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding date}" />
-                    <GridViewColumn Header="Title" Width="200" DisplayMemberBinding="{Binding title}" />
-                    <GridViewColumn Header="Keywords" Width="200" DisplayMemberBinding="{Binding KeywordList}" />
+                    <GridViewColumn Header="RFC" Width="80" 
+                                    DisplayMemberBinding="{Binding DocumentId}" />
+                    <GridViewColumn Header="Date" Width="100"
+                                    DisplayMemberBinding="{Binding Date}" />
+                    <GridViewColumn Header="Title" Width="200"
+                                    DisplayMemberBinding="{Binding Title}" />
+                    <GridViewColumn Header="Keywords" Width="200"
+                                    DisplayMemberBinding="{Binding KeywordList}" />
+                    <GridViewColumn Header="Current Status" Width="50"
+                                    DisplayMemberBinding="{Binding CurrentStatus}" />
+                    <GridViewColumn Header="Publication Status" Width="50"
+                                    DisplayMemberBinding="{Binding PublicationStatus}" />
                 </GridView>
             </ListView.View>
         </ListView>

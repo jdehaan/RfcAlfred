@@ -24,11 +24,11 @@ namespace Alfred.Models.Index
 			}
 		}
 
-		public Rfc.rfcentry[] Entries
+		public Rfc.RfcEntry[] Entries
 		{
 			get
 			{
-				return _index.rfcentry;
+				return _index.RfcEntry;
 			}
 		}
 

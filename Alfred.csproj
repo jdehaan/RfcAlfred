@@ -96,6 +96,7 @@
     <Compile Include="Models\Index\rfc-index.cs">
       <DependentUpon>rfc-index.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Models\Index\RfcEntry.cs" />
     <Compile Include="Models\Index\RfcIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Index\RfcIndexListControl.xaml.cs">
