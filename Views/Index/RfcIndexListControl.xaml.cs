@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,23 +12,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Alfred
+namespace Alfred.Views.Index
 {
 	/// <summary>
-	/// Interaction logic for MainPage.xaml
+	/// Interaction logic for RfcIndexListControl.xaml
 	/// </summary>
-	public partial class MainPage : Page
+	public partial class RfcIndexListControl: UserControl
 	{
-		public MainPage()
+		public RfcIndexListControl()
 		{
 			InitializeComponent();
 		}
-
-		private void Page_Loaded(object sender, RoutedEventArgs e)
-		{
-			var index = Models.Index.RfcIndex.FromFile("rfc-index.xml");
-			rfcIndexList.DataContext = index;
-		}
-
 	}
 }

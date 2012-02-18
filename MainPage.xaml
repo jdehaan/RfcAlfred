@@ -1,7 +1,12 @@
-﻿<Page x:Class="Alfred.MainPage"
+﻿<Page xmlns:my="clr-namespace:Alfred.Views.Index"  x:Class="Alfred.MainPage"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	Title="MainPage" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="175" d:DesignWidth="265">
+	Title="MainPage" mc:Ignorable="d"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      d:DesignHeight="175" d:DesignWidth="265"
+      Loaded="Page_Loaded">
 	<Grid>
+        <my:RfcIndexListControl x:Name="rfcIndexList"/>
     </Grid>
 </Page>
