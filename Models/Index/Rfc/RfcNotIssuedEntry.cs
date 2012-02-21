@@ -11,7 +11,7 @@ namespace Alfred.Models.Index.Rfc
 	[DebuggerStepThrough]
 	[DesignerCategory("code")]
 	[XmlRoot("rfc-not-issued-entry", Namespace = "http://www.rfc-editor.org/rfc-index", IsNullable = false)]
-	public class RfcNotIssuedEntry : IRfcIndexEntry
+	public class RfcNotIssuedEntry
 	{
 		public override string ToString()
 		{
@@ -23,18 +23,6 @@ namespace Alfred.Models.Index.Rfc
 		{
 			get;
 			set;
-		}
-
-		[XmlIgnore]
-		public string Title
-		{
-			get { return "- NOT ISSUED -"; }
-		}
-
-		[XmlIgnore]
-		public string[] IsAlso
-		{
-			get { return null; }
 		}
 	}
 }

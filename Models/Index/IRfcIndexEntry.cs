@@ -9,8 +9,16 @@ namespace Alfred.Models.Index
 	{
 		string DocumentId { get; }
 
+		string Date { get; }
+
 		string Title { get; }
 
-		string[] IsAlso { get; }
+		string IsAlso { get; }
+
+		string Keywords { get; }
+
+		Rfc.RfcStatus CurrentStatus { get; }
+
+		Rfc.RfcStatus PublicationStatus { get; }
 	}
 }

@@ -10,7 +10,7 @@ namespace Alfred.Models.Index.Rfc
 	[DebuggerStepThrough]
 	[DesignerCategory("code")]
 	[XmlRoot("std-entry", Namespace = "http://www.rfc-editor.org/rfc-index", IsNullable = false)]
-	public class RfcStdEntry : IRfcIndexEntry
+	public class RfcStdEntry
 	{
 		public override string ToString()
 		{

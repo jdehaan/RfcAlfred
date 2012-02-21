@@ -11,7 +11,7 @@ namespace Alfred.Models.Index.Rfc
 	[DesignerCategory("code")]
 	[XmlType(AnonymousType = true, Namespace = "http://www.rfc-editor.org/rfc-index")]
 	[XmlRoot("bcp-entry", Namespace = "http://www.rfc-editor.org/rfc-index", IsNullable = false)]
-	public class RfcBcpEntry : IRfcIndexEntry
+	public class RfcBcpEntry
 	{
 		public override string ToString()
 		{

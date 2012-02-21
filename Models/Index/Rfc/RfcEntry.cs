@@ -12,7 +12,7 @@ namespace Alfred.Models.Index.Rfc
 	[DesignerCategory("code")]
 	[XmlType(AnonymousType = true, Namespace = "http://www.rfc-editor.org/rfc-index")]
 	[XmlRoot("rfc-entry", Namespace = "http://www.rfc-editor.org/rfc-index", IsNullable = false)]
-	public class RfcEntry : IRfcIndexEntry
+	public class RfcEntry
 	{
 		public override string ToString()
 		{
@@ -60,17 +60,6 @@ namespace Alfred.Models.Index.Rfc
 		{
 			get;
 			set;
-		}
-
-		[XmlIgnore]
-		public string KeywordList
-		{
-			get
-			{
-				if (Keywords == null || Keywords.Length == 0)
-					return String.Empty;
-				return String.Join(";", Keywords);
-			}
 		}
 
 		[XmlArray("abstract")]

@@ -93,6 +93,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Index\IRfcIndexEntry.cs" />
+    <Compile Include="Models\Index\RfcIndexEntry.cs" />
     <Compile Include="Models\Index\Rfc\rfc-index.cs">
       <DependentUpon>rfc-index.xsd</DependentUpon>
     </Compile>

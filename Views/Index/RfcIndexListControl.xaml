@@ -22,7 +22,7 @@
                     <GridViewColumn Header="Title" Width="200"
                                     DisplayMemberBinding="{Binding Title}" />
                     <GridViewColumn Header="Keywords" Width="200"
-                                    DisplayMemberBinding="{Binding KeywordList}" />
+                                    DisplayMemberBinding="{Binding Keywords}" />
                     <GridViewColumn Header="Current Status" Width="50"
                                     DisplayMemberBinding="{Binding CurrentStatus}" />
                     <GridViewColumn Header="Publication Status" Width="50"
