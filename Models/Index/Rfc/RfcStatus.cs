@@ -36,5 +36,8 @@ namespace Alfred.Models.Index.Rfc
 
 		[XmlEnum("INFORMATIONAL")]
 		Informational,
+		
+		[XmlIgnore]
+		NotIssued
 	}
 }

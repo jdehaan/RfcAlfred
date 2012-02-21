@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:alvi="clr-namespace:Alfred.Views.Index"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="640">
     <Grid>
+        <Grid.Resources>
+            <alvi:RfcStatusToIconFilenameConverter x:Key="IconConverter"/>
+        </Grid.Resources>
         <ListView
             VirtualizingStackPanel.IsVirtualizing="True"
             VirtualizingStackPanel.VirtualizationMode="Recycling"
@@ -15,7 +19,14 @@
             >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="RFC" Width="80" 
+                    <GridViewColumn Header="S" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Width="16" Height="16" Source="{Binding CurrentStatus, Converter={StaticResource IconConverter}}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Id" Width="Auto" 
                                     DisplayMemberBinding="{Binding DocumentId}" />
                     <GridViewColumn Header="Date" Width="100"
                                     DisplayMemberBinding="{Binding Date}" />
@@ -23,10 +34,6 @@
                                     DisplayMemberBinding="{Binding Title}" />
                     <GridViewColumn Header="Keywords" Width="200"
                                     DisplayMemberBinding="{Binding Keywords}" />
-                    <GridViewColumn Header="Current Status" Width="50"
-                                    DisplayMemberBinding="{Binding CurrentStatus}" />
-                    <GridViewColumn Header="Publication Status" Width="50"
-                                    DisplayMemberBinding="{Binding PublicationStatus}" />
                 </GridView>
             </ListView.View>
         </ListView>

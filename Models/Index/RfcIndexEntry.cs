@@ -53,8 +53,8 @@ namespace Alfred.Models.Index
 		{
 			DocumentId = entry.DocumentId;
 			Title = "- NOT ISSUED -";
-			CurrentStatus = Rfc.RfcStatus.Unknown;
-			PublicationStatus = Rfc.RfcStatus.Unknown;
+			CurrentStatus = Rfc.RfcStatus.NotIssued;
+			PublicationStatus = Rfc.RfcStatus.NotIssued;
 		}
 
 		public string DocumentId
