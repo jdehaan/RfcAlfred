@@ -7,5 +7,10 @@ namespace Alfred.Models.Index
 {
 	public interface IRfcIndexEntry
 	{
+		string DocumentId { get; }
+
+		string Title { get; }
+
+		string[] IsAlso { get; }
 	}
 }

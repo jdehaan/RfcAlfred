@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Xml.Serialization;
 
-namespace Rfc
+namespace Alfred.Models.Index.Rfc
 {
 
 	[Serializable]
@@ -12,7 +12,7 @@ namespace Rfc
 	[DesignerCategory("code")]
 	[XmlType(AnonymousType = true, Namespace = "http://www.rfc-editor.org/rfc-index")]
 	[XmlRoot("rfc-entry", Namespace = "http://www.rfc-editor.org/rfc-index", IsNullable = false)]
-	public class RfcEntry
+	public class RfcEntry : IRfcIndexEntry
 	{
 		public override string ToString()
 		{
@@ -144,21 +144,21 @@ namespace Rfc
 		}
 
 		[XmlElement("current-status")]
-		public status CurrentStatus
+		public RfcStatus CurrentStatus
 		{
 			get;
 			set;
 		}
 
 		[XmlElement("publication-status")]
-		public status PublicationStatus
+		public RfcStatus PublicationStatus
 		{
 			get;
 			set;
 		}
 
-		/// <remarks/>
-		public stream stream
+		[XmlElement("stream")]
+		public stream Stream
 		{
 			get;
 			set;
@@ -172,8 +172,8 @@ namespace Rfc
 			set;
 		}
 
-		/// <remarks/>
-		public string area
+		[XmlElement("area")]
+		public string Area
 		{
 			get;
 			set;

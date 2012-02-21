@@ -24,14 +24,25 @@ namespace Alfred.Models.Index
 			}
 		}
 
-		public Rfc.RfcEntry[] Entries
+		public IRfcIndexEntry[] Entries
 		{
 			get
 			{
-				return _index.RfcEntry;
+				if (_entries == null)
+				{
+					var entries = new List<IRfcIndexEntry>();
+					entries.AddRange(_index.RfcEntry);
+					entries.AddRange(_index.StdEntry);
+					entries.AddRange(_index.FyiEntry);
+					entries.AddRange(_index.BcpEntry);
+					entries.AddRange(_index.RfcNotIssuedEntry);
+					_entries = entries.OrderBy(x => x.DocumentId).ToArray();
+				}
+				return _entries;
 			}
 		}
 
+		private IRfcIndexEntry[] _entries;
 		private Rfc.rfcindex _index;
 	}
 }
