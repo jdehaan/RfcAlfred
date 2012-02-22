@@ -13,7 +13,7 @@ namespace Alfred.Models.Index
 
 		string Title { get; }
 
-		string IsAlso { get; }
+		string[] IsAlso { get; }
 
 		string Keywords { get; }
 

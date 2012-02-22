@@ -4,9 +4,14 @@
 	Title="MainPage" mc:Ignorable="d"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      d:DesignHeight="175" d:DesignWidth="265"
+      d:DesignHeight="242" d:DesignWidth="346"
       Loaded="Page_Loaded">
 	<Grid>
-        <my:RfcIndexListControl x:Name="rfcIndexList"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <my:RfcIndexSearchControl x:Name="rfcIndexSearch" Grid.Row="0" Grid.Column="0" />
+        <my:RfcIndexListControl x:Name="rfcIndexList" Grid.Row="1" Grid.Column="0" />
     </Grid>
 </Page>

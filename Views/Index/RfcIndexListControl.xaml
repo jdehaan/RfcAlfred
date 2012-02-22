@@ -15,7 +15,6 @@
             VirtualizingStackPanel.VirtualizationMode="Recycling"
             ScrollViewer.IsDeferredScrollingEnabled="True"
             ItemsSource="{Binding Entries}"
-            Grid.IsSharedSizeScope="True"
             >
             <ListView.View>
                 <GridView>
@@ -34,6 +33,24 @@
                                     DisplayMemberBinding="{Binding Title}" />
                     <GridViewColumn Header="Keywords" Width="200"
                                     DisplayMemberBinding="{Binding Keywords}" />
+                    <GridViewColumn Header="IsAlso" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <ItemsControl ItemsSource="{Binding Path=IsAlso}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="SeeAlso" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <ItemsControl ItemsSource="{Binding Path=SeeAlso}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

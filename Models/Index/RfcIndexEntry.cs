@@ -10,6 +10,8 @@ namespace Alfred.Models.Index
 		public RfcIndexEntry(Rfc.RfcEntry entry)
 		{
 			DocumentId = entry.DocumentId;
+			IsAlso = entry.IsAlso;
+			SeeAlso = entry.SeeAlso;
 			Date = entry.Date.ToString();
 			Title = entry.Title;
 			if (entry.Keywords == null || entry.Keywords.Length == 0)
@@ -22,30 +24,24 @@ namespace Alfred.Models.Index
 		public RfcIndexEntry(Rfc.RfcBcpEntry entry)
 		{
 			DocumentId = entry.DocumentId;
-			if (entry.IsAlso == null || entry.IsAlso.Length == 0)
-				Title = String.Empty;
-			else
-				Title = String.Join(";", entry.IsAlso);
+			IsAlso = entry.IsAlso;
+			Title = String.Empty;
 			CurrentStatus = Rfc.RfcStatus.BCP;
 			PublicationStatus = Rfc.RfcStatus.BCP;
 		}
 		public RfcIndexEntry(Rfc.RfcFyiEntry entry)
 		{
 			DocumentId = entry.DocumentId;
-			if (entry.IsAlso == null || entry.IsAlso.Length == 0)
-				Title = String.Empty;
-			else
-				Title = String.Join(";", entry.IsAlso);
+			IsAlso = entry.IsAlso;
+			Title = String.Empty;
 			CurrentStatus = Rfc.RfcStatus.FYI;
 			PublicationStatus = Rfc.RfcStatus.FYI;
 		}
 		public RfcIndexEntry(Rfc.RfcStdEntry entry)
 		{
 			DocumentId = entry.DocumentId;
-			if (entry.IsAlso == null || entry.IsAlso.Length == 0)
-				Title = String.Empty;
-			else
-				Title = String.Join(";", entry.IsAlso);
+			IsAlso = entry.IsAlso;
+			Title = String.Empty;
 			CurrentStatus = Rfc.RfcStatus.Standard;
 			PublicationStatus = Rfc.RfcStatus.Standard;
 		}
@@ -69,7 +65,13 @@ namespace Alfred.Models.Index
 			private set;
 		}
 
-		public string IsAlso
+		public string[] IsAlso
+		{
+			get;
+			private set;
+		}
+
+		public string[] SeeAlso
 		{
 			get;
 			private set;
