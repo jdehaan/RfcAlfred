@@ -37,15 +37,32 @@ namespace Alfred.Views.Index
 			set
 			{
 				_searchText = value;
-				ICollectionView view = CollectionViewSource.GetDefaultView(list.DataContext);
+				ICollectionView view = CollectionViewSource.GetDefaultView(list.ItemsSource);
 				if (view != null)
 				{
-					view.Filter = o =>
+					if (String.IsNullOrWhiteSpace(_searchText))
 					{
-						var entry = o as RfcIndexEntryViewModel;
-						return entry.Keywords.Contains(_searchText);
-					};
-				}				
+						view.Filter = null;
+					}
+					else
+					{
+						view.Filter = o =>
+						{
+							var entry = o as RfcIndexEntryViewModel;
+							if (entry.Title != null)
+							{
+								var result = entry.Title.Contains(_searchText);
+								if (result)
+									return true;
+							}
+							if (entry.Keywords != null)
+							{
+								return entry.Keywords.Contains(_searchText);
+							}
+							return false;
+						};
+					}
+				}
 			}
 		}
 

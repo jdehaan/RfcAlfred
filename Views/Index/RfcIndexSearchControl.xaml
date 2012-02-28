@@ -10,7 +10,7 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" Name="textBoxSearch" VerticalAlignment="Stretch" />
+        <TextBox Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" Name="textBoxSearch" VerticalAlignment="Stretch" PreviewKeyDown="textBoxSearch_PreviewKeyDown" />
         <Button Grid.Column="1" Grid.Row="0" Content="Search" HorizontalAlignment="Stretch" Name="buttonSearch" VerticalAlignment="Stretch" Click="buttonSearch_Click" />
     </Grid>
 </UserControl>

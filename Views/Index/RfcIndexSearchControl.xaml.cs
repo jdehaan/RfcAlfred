@@ -39,5 +39,11 @@ namespace Alfred.Views.Index
 		}
 
 		public event EventHandler SearchCriteriaChanged;
+
+		private void textBoxSearch_PreviewKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.Key == Key.Enter)
+				buttonSearch_Click(null, null);
+		}
 	}
 }
