@@ -33,6 +33,11 @@ namespace Alfred.Views.Index
 		private void buttonSearch_Click(object sender, RoutedEventArgs e)
 		{
 			SearchText = textBoxSearch.Text;
+			var ev = SearchCriteriaChanged;
+			if (ev != null)
+				ev(this, null);
 		}
+
+		public event EventHandler SearchCriteriaChanged;
 	}
 }

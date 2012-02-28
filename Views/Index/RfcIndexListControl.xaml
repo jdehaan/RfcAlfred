@@ -12,6 +12,7 @@
             <almi:RfcStatusToIconFilenameConverter x:Key="IconConverter"/>
         </Grid.Resources>
         <ListView
+            Name="list"
             VirtualizingStackPanel.IsVirtualizing="True"
             VirtualizingStackPanel.VirtualizationMode="Recycling"
             ScrollViewer.IsDeferredScrollingEnabled="True"

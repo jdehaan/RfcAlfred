@@ -16,7 +16,7 @@ namespace Alfred
 	/// <summary>
 	/// Interaction logic for MainPage.xaml
 	/// </summary>
-	public partial class MainPage : Page
+	public partial class MainPage: Page
 	{
 		public MainPage()
 		{
@@ -26,7 +26,13 @@ namespace Alfred
 		private void Page_Loaded(object sender, RoutedEventArgs e)
 		{
 			var index = Models.Index.RfcIndex.FromFile("rfc-index.xml");
-			rfcIndexList.DataContext = index;
+			rfcIndexList.DataContext = new ViewModels.Index.RfcIndexViewModel(index);
+			rfcIndexSearch.SearchCriteriaChanged += new EventHandler(rfcIndexSearch_SearchCriteriaChanged);
+		}
+
+		private void rfcIndexSearch_SearchCriteriaChanged(object sender, EventArgs e)
+		{
+			rfcIndexList.SearchText = rfcIndexSearch.SearchText;
 		}
 
 	}

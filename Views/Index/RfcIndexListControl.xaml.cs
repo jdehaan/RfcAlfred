@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -12,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Alfred.ViewModels.Index;
+
 namespace Alfred.Views.Index
 {
 	/// <summary>
@@ -23,5 +26,28 @@ namespace Alfred.Views.Index
 		{
 			InitializeComponent();
 		}
+
+		private String _searchText;
+		public String SearchText
+		{
+			get
+			{
+				return _searchText;
+			}
+			set
+			{
+				_searchText = value;
+				ICollectionView view = CollectionViewSource.GetDefaultView(list.DataContext);
+				if (view != null)
+				{
+					view.Filter = o =>
+					{
+						var entry = o as RfcIndexEntryViewModel;
+						return entry.Keywords.Contains(_searchText);
+					};
+				}				
+			}
+		}
+
 	}
 }
