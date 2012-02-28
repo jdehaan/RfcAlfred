@@ -112,7 +112,7 @@
     <Compile Include="Views\Index\RfcIndexSearchControl.xaml.cs">
       <DependentUpon>RfcIndexSearchControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Index\RfcStatusToIconFilenameConverter.cs" />
+    <Compile Include="ViewModels\Index\RfcStatusToIconFilenameConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

@@ -14,10 +14,7 @@ namespace Alfred.Models.Index
 			SeeAlso = entry.SeeAlso;
 			Date = entry.Date.ToString();
 			Title = entry.Title;
-			if (entry.Keywords == null || entry.Keywords.Length == 0)
-				Keywords = String.Empty;
-			else 
-				Keywords = String.Join(";", entry.Keywords);
+			Keywords = entry.Keywords;
 			CurrentStatus = entry.CurrentStatus;
 			PublicationStatus = entry.PublicationStatus;
 		}
@@ -25,7 +22,7 @@ namespace Alfred.Models.Index
 		{
 			DocumentId = entry.DocumentId;
 			IsAlso = entry.IsAlso;
-			Title = String.Empty;
+			Title = entry.Title ?? String.Empty;
 			CurrentStatus = Rfc.RfcStatus.BCP;
 			PublicationStatus = Rfc.RfcStatus.BCP;
 		}
@@ -33,7 +30,7 @@ namespace Alfred.Models.Index
 		{
 			DocumentId = entry.DocumentId;
 			IsAlso = entry.IsAlso;
-			Title = String.Empty;
+			Title = entry.Title ?? String.Empty;
 			CurrentStatus = Rfc.RfcStatus.FYI;
 			PublicationStatus = Rfc.RfcStatus.FYI;
 		}
@@ -41,7 +38,7 @@ namespace Alfred.Models.Index
 		{
 			DocumentId = entry.DocumentId;
 			IsAlso = entry.IsAlso;
-			Title = String.Empty;
+			Title = entry.Title ?? String.Empty;
 			CurrentStatus = Rfc.RfcStatus.Standard;
 			PublicationStatus = Rfc.RfcStatus.Standard;
 		}
@@ -83,7 +80,7 @@ namespace Alfred.Models.Index
 			private set;
 		}
 
-		public string Keywords
+		public string[] Keywords
 		{
 			get;
 			private set;

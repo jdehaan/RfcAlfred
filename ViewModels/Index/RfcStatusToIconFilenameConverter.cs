@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 
 using Alfred.Models.Index.Rfc;
 
-namespace Alfred.Views.Index
+namespace Alfred.ViewModels.Index
 {
 	[ValueConversion(typeof(RfcStatus), typeof(string))]
 	public class RfcStatusToIconFilenameConverter: IValueConverter
