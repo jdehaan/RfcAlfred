@@ -15,7 +15,7 @@
             Name="list"
             VirtualizingStackPanel.IsVirtualizing="True"
             VirtualizingStackPanel.VirtualizationMode="Recycling"
-            ScrollViewer.IsDeferredScrollingEnabled="True"
+            ScrollViewer.IsDeferredScrollingEnabled="False"
             ItemsSource="{Binding Entries}"
             >
             <ListView.View>
