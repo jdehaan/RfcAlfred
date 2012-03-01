@@ -92,6 +92,8 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Document\IRfcDocument.cs" />
+    <Compile Include="Models\Document\RfcDocument.cs" />
     <Compile Include="Models\Index\IRfcIndexEntry.cs" />
     <Compile Include="Models\Index\RfcIndexEntry.cs" />
     <Compile Include="Models\Index\Rfc\rfc-index.cs">
@@ -108,8 +110,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Storage\Remote.cs" />
     <Compile Include="Storage\Storage.cs" />
+    <Compile Include="ViewModels\Document\RfcDocumentViewModel.cs" />
     <Compile Include="ViewModels\Index\RfcIndexEntryViewModel.cs" />
     <Compile Include="ViewModels\Index\RfcIndexViewModel.cs" />
+    <Compile Include="Views\Document\RfcDocumentViewControl.xaml.cs">
+      <DependentUpon>RfcDocumentViewControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Index\RfcIndexListControl.xaml.cs">
       <DependentUpon>RfcIndexListControl.xaml</DependentUpon>
     </Compile>
@@ -185,6 +191,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Document\RfcDocumentViewControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

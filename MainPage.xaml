@@ -7,11 +7,21 @@
       d:DesignHeight="242" d:DesignWidth="346"
       Loaded="Page_Loaded">
 	<Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="1*" />
-        </Grid.RowDefinitions>
-        <my:RfcIndexSearchControl x:Name="rfcIndexSearch" Grid.Row="0" Grid.Column="0" />
-        <my:RfcIndexListControl x:Name="rfcIndexList" Grid.Row="1" Grid.Column="0" />
+        <TabControl>
+            <TabItem Name="indexTab" Header="Index">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <my:RfcIndexSearchControl x:Name="rfcIndexSearch" Grid.Row="0" Grid.Column="0" />
+                    <my:RfcIndexListControl x:Name="rfcIndexList" Grid.Row="1" Grid.Column="0" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="documentTab" Header="Documents">
+                <Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>
