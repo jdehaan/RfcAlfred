@@ -13,9 +13,9 @@ namespace Alfred.Models.Index
 
 		string Title { get; }
 
-		string[] IsAlso { get; }
+		ICollection<string> IsAlso { get; }
 
-		string[] Keywords { get; }
+		ICollection<string> Keywords { get; }
 
 		Rfc.RfcStatus CurrentStatus { get; }
 

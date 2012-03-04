@@ -3,3 +3,5 @@
 /obj
 /bin
 *.user
+/StyleCop.Cache
+/StyleCopViolations.xml

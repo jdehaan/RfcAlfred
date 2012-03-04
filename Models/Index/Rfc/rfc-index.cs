@@ -11,7 +11,7 @@ namespace Alfred.Models.Index.Rfc
 	[DebuggerStepThrough]
 	[DesignerCategory("code")]
 	[XmlRoot(Namespace = "http://www.rfc-editor.org/rfc-index", IsNullable = false)]
-	public class Date
+	public class RfcDate
 	{
 		[XmlElement("month")]
 		public MonthName Month
@@ -85,15 +85,6 @@ namespace Alfred.Models.Index.Rfc
 			get;
 			set;
 		}
-	}
-
-	[Serializable]
-	[XmlType(Namespace = "http://www.rfc-editor.org/rfc-index")]
-	public enum FileFormat
-	{
-		ASCII,
-		PS,
-		PDF,
 	}
 
 	[Serializable]

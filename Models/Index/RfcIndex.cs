@@ -24,7 +24,7 @@ namespace Alfred.Models.Index
 			}
 		}
 
-		public IRfcIndexEntry[] Entries
+		public ICollection<IRfcIndexEntry> Entries
 		{
 			get
 			{

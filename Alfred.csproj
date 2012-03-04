@@ -103,6 +103,7 @@
     <Compile Include="Models\Index\Rfc\RfcBcpEntry.cs" />
     <Compile Include="Models\Index\Rfc\RfcEntry.cs" />
     <Compile Include="Models\Index\RfcIndex.cs" />
+    <Compile Include="Models\Index\Rfc\RfcFileFormat.cs" />
     <Compile Include="Models\Index\Rfc\RfcFyiEntry.cs" />
     <Compile Include="Models\Index\Rfc\RfcNotIssuedEntry.cs" />
     <Compile Include="Models\Index\Rfc\RfcStdEntry.cs" />

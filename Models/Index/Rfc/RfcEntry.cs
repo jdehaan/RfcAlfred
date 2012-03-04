@@ -41,7 +41,7 @@ namespace Alfred.Models.Index.Rfc
 		}
 
 		[XmlElement("date")]
-		public Date Date
+		public RfcDate Date
 		{
 			get;
 			set;
@@ -153,14 +153,6 @@ namespace Alfred.Models.Index.Rfc
 			set;
 		}
 
-		/// <remarks/>
-		[XmlIgnore]
-		public bool streamSpecified
-		{
-			get;
-			set;
-		}
-
 		[XmlElement("area")]
 		public string Area
 		{
@@ -169,14 +161,14 @@ namespace Alfred.Models.Index.Rfc
 		}
 
 		[XmlElement("wg_acronym")]
-		public string WgAcronym
+		public string WorkingGroupAcronym
 		{
 			get;
 			set;
 		}
 
 		[XmlElement("errata-url")]
-		public string ErrataUrl
+		public String ErrataUrl
 		{
 			get;
 			set;

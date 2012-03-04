@@ -62,13 +62,13 @@ namespace Alfred.Models.Index
 			private set;
 		}
 
-		public string[] IsAlso
+		public ICollection<string> IsAlso
 		{
 			get;
 			private set;
 		}
 
-		public string[] SeeAlso
+		public ICollection<string> SeeAlso
 		{
 			get;
 			private set;
@@ -80,7 +80,7 @@ namespace Alfred.Models.Index
 			private set;
 		}
 
-		public string[] Keywords
+		public ICollection<string> Keywords
 		{
 			get;
 			private set;

@@ -38,7 +38,7 @@ namespace Alfred.ViewModels.Index
 			}
 		}
 
-		public string[] IsAlso
+		public ICollection<string> IsAlso
 		{
 			get
 			{
@@ -46,7 +46,7 @@ namespace Alfred.ViewModels.Index
 			}
 		}
 
-		public string[] Keywords
+		public ICollection<string> Keywords
 		{
 			get
 			{
