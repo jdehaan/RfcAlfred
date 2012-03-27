@@ -20,7 +20,7 @@ namespace Alfred.Views.Index
 	/// <summary>
 	/// Interaction logic for RfcIndexListControl.xaml
 	/// </summary>
-	public partial class RfcIndexListControl: UserControl
+	public partial class RfcIndexListControl : UserControl
 	{
 		public RfcIndexListControl()
 		{

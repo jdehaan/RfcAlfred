@@ -17,7 +17,7 @@ namespace Alfred
 	/// <summary>
 	/// Interaction logic for MainPage.xaml
 	/// </summary>
-	public partial class MainPage: Page
+	public partial class MainPage : Page
 	{
 		public MainPage()
 		{

@@ -17,7 +17,7 @@ namespace Alfred.Views.Document
 	/// <summary>
 	/// Interaction logic for RfcDocumentViewControl.xaml
 	/// </summary>
-	public partial class RfcDocumentViewControl: UserControl
+	public partial class RfcDocumentViewControl : UserControl
 	{
 		public RfcDocumentViewControl()
 		{

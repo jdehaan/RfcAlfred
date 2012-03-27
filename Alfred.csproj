@@ -183,6 +183,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Models\Index\Rfc\rfc-index.xsd" />
+    <None Include="Settings.SourceAnalysis" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

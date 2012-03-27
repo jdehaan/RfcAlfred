@@ -17,7 +17,7 @@ namespace Alfred.Views.Index
 	/// <summary>
 	/// Interaction logic for RfcIndexSearchControl.xaml
 	/// </summary>
-	public partial class RfcIndexSearchControl: UserControl
+	public partial class RfcIndexSearchControl : UserControl
 	{
 		public RfcIndexSearchControl()
 		{

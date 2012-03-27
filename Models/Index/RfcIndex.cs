@@ -31,9 +31,9 @@ namespace Alfred.Models.Index
 				if (_entries == null)
 				{
 					var entries = new List<IRfcIndexEntry>();
-					entries.AddRange(_index.RfcEntry.Select( x => new RfcIndexEntry(x)));
-					entries.AddRange(_index.StdEntry.Select( x => new RfcIndexEntry(x)));
-					entries.AddRange(_index.FyiEntry.Select( x => new RfcIndexEntry(x)));
+					entries.AddRange(_index.RfcEntry.Select(x => new RfcIndexEntry(x)));
+					entries.AddRange(_index.StdEntry.Select(x => new RfcIndexEntry(x)));
+					entries.AddRange(_index.FyiEntry.Select(x => new RfcIndexEntry(x)));
 					entries.AddRange(_index.BcpEntry.Select(x => new RfcIndexEntry(x)));
 					entries.AddRange(_index.RfcNotIssuedEntry.Select(x => new RfcIndexEntry(x)));
 					_entries = entries.OrderBy(x => x.DocumentId).ToArray();

@@ -1,6 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+# Visual Studio 2010
+# SharpDevelop 4.2.0.8528-beta
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alfred", "Alfred.csproj", "{736A48EC-C67A-4368-809E-D051511099F1}"
 EndProject
 Global
