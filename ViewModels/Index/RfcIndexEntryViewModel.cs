@@ -46,11 +46,27 @@ namespace Alfred.ViewModels.Index
 			}
 		}
 
+		public ICollection<string> SeeAlso
+		{
+			get
+			{
+				return _model.SeeAlso;
+			}
+		}
+
 		public ICollection<string> Keywords
 		{
 			get
 			{
 				return _model.Keywords;
+			}
+		}
+
+		public string Abstract
+		{
+			get
+			{
+				return _model.Abstract;
 			}
 		}
 

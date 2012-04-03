@@ -69,5 +69,10 @@ namespace Alfred
 			rfcIndexList.SearchText = rfcIndexSearch.SearchText;
 		}
 
+		private void rfcIndexList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			rfcIndexEntry.DataContext = rfcIndexList.SelectedEntry;
+		}
+
 	}
 }

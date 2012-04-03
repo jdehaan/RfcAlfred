@@ -66,5 +66,27 @@ namespace Alfred.Views.Index
 			}
 		}
 
+		public event SelectionChangedEventHandler SelectionChanged;
+
+		public RfcIndexEntryViewModel SelectedEntry
+		{
+			get
+			{
+				return list.SelectedItem as RfcIndexEntryViewModel;
+			}
+		}
+
+		private void list_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			var ev = SelectionChanged;
+			if (ev != null)
+				ev(this, e);
+		}
+
+		private void list_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+		{
+
+		}
+
 	}
 }

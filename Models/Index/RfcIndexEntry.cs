@@ -17,6 +17,8 @@ namespace Alfred.Models.Index
 			Keywords = entry.Keywords;
 			CurrentStatus = entry.CurrentStatus;
 			PublicationStatus = entry.PublicationStatus;
+			if (entry.Abstract != null)
+				Abstract = String.Join(Environment.NewLine, entry.Abstract);
 		}
 		public RfcIndexEntry(Rfc.RfcBcpEntry entry)
 		{
@@ -69,6 +71,12 @@ namespace Alfred.Models.Index
 		}
 
 		public ICollection<string> SeeAlso
+		{
+			get;
+			private set;
+		}
+
+		public string Abstract
 		{
 			get;
 			private set;

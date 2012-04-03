@@ -16,8 +16,7 @@
             VirtualizingStackPanel.IsVirtualizing="True"
             VirtualizingStackPanel.VirtualizationMode="Recycling"
             ScrollViewer.IsDeferredScrollingEnabled="False"
-            ItemsSource="{Binding Entries}"
-            >
+            ItemsSource="{Binding Entries}" SelectionChanged="list_SelectionChanged" PreviewMouseDoubleClick="list_PreviewMouseDoubleClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="S" Width="Auto">
@@ -31,17 +30,8 @@
                                     DisplayMemberBinding="{Binding DocumentId}" />
                     <GridViewColumn Header="Date" Width="100"
                                     DisplayMemberBinding="{Binding Date}" />
-                    <GridViewColumn Header="Title" Width="200"
+                    <GridViewColumn Header="Title" Width="300"
                                     DisplayMemberBinding="{Binding Title}" />
-                    <GridViewColumn Header="Keywords" Width="200">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Vertical">
-                                    <ItemsControl ItemsSource="{Binding Path=Keywords}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
                     <GridViewColumn Header="IsAlso" Width="Auto">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

@@ -117,6 +117,9 @@
     <Compile Include="Views\Document\RfcDocumentViewControl.xaml.cs">
       <DependentUpon>RfcDocumentViewControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Index\RfcIndexEntryControl.xaml.cs">
+      <DependentUpon>RfcIndexEntryControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Index\RfcIndexListControl.xaml.cs">
       <DependentUpon>RfcIndexListControl.xaml</DependentUpon>
     </Compile>
@@ -197,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Document\RfcDocumentViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Index\RfcIndexEntryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -12,10 +12,14 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="4" />
                         <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
                     <my:RfcIndexSearchControl x:Name="rfcIndexSearch" Grid.Row="0" Grid.Column="0" />
-                    <my:RfcIndexListControl x:Name="rfcIndexList" Grid.Row="1" Grid.Column="0" />
+                    <my:RfcIndexListControl x:Name="rfcIndexList" Grid.Row="1" Grid.Column="0" SelectionChanged="rfcIndexList_SelectionChanged" />
+                    <GridSplitter Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  ResizeDirection="Rows" HorizontalAlignment="Stretch" />
+                    <my:RfcIndexEntryControl x:Name="rfcIndexEntry" Grid.Row="3" Grid.Column="0"  />
                 </Grid>
             </TabItem>
             <TabItem Name="documentTab" Header="Documents">
