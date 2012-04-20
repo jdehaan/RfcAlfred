@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
+using System.Net;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -85,6 +87,19 @@ namespace Alfred.Views.Index
 
 		private void list_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
 		{
+            RfcIndexEntryViewModel selected = SelectedEntry;
+            
+            String documentId = selected.DocumentId;
+            FileInfo documentPath = Storage.GetDocumentPath(documentId);
+            if (!documentPath.Exists)
+            {
+                using (WebClient client = new WebClient())
+                {
+                    client.DownloadFile(Remote.GetDocumentUri(documentId), documentPath.FullName);
+                }
+            }
+
+            // open the file
 
 		}
 

@@ -20,7 +20,7 @@ namespace Alfred
 			}
 		}
 
-		public static Uri Index
+		public static Uri IndexUri
 		{
 			get
 			{
@@ -32,7 +32,20 @@ namespace Alfred
 			}
 		}
 
-		private static Uri _indexUri;
+        public static Uri GetDocumentUri(String documentId)
+        {
+            String type = documentId.Substring(0, 3).ToLowerInvariant();
+            int id = Convert.ToInt32(documentId.Substring(3));
+            String filepath;
+            if (type != "rfc")
+                filepath = String.Format("{0}/{0}{1}.txt", type, id);
+            else
+                filepath = String.Format("{0}{1}.txt", type, id);
+
+            return new Uri(BaseUri, filepath);
+        }
+        
+        private static Uri _indexUri;
 		private static Uri _baseUri;
 	}
 }

@@ -27,9 +27,9 @@ namespace Alfred
 
 		private void Page_Loaded(object sender, RoutedEventArgs e)
 		{
-			if (Storage.Index.Exists)
+			if (Storage.IndexPath.Exists)
 			{
-				var index = Models.Index.RfcIndex.FromFile(Storage.Index.FullName);
+				var index = Models.Index.RfcIndex.FromFile(Storage.IndexPath.FullName);
 				rfcIndexList.DataContext = new ViewModels.Index.RfcIndexViewModel(index);
 				rfcIndexSearch.SearchCriteriaChanged += new EventHandler(rfcIndexSearch_SearchCriteriaChanged);
 			}
@@ -37,7 +37,7 @@ namespace Alfred
 
 		private static void InitializeOrUpdateIndex()
 		{
-			if (!Storage.Index.Exists)
+			if (!Storage.IndexPath.Exists)
 			{
 				if (MessageBox.Show("The rfc index was not downloaded yet, download it now?",
 					"Missing index!",
@@ -46,7 +46,7 @@ namespace Alfred
 			}
 			else
 			{
-				if ((DateTime.Now - Storage.Index.LastWriteTime).TotalDays > 30)
+				if ((DateTime.Now - Storage.IndexPath.LastWriteTime).TotalDays > 30)
 				{
 					if (MessageBox.Show("The rfc index was not updated since more than 30 days, update it now?",
 						"Update index?",
@@ -60,7 +60,7 @@ namespace Alfred
 		{
 			using (WebClient client = new WebClient())
 			{
-				client.DownloadFile(Remote.Index, Storage.Index.FullName);
+				client.DownloadFile(Remote.IndexUri, Storage.IndexPath.FullName);
 			}
 		}
 
