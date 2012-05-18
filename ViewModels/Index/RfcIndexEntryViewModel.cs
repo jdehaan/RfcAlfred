@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 using Alfred.Models.Index;
@@ -85,6 +87,18 @@ namespace Alfred.ViewModels.Index
 				return _model.PublicationStatus;
 			}
 		}
+
+        public void Download()
+        {
+            FileInfo documentPath = Storage.GetDocumentPath(DocumentId);
+            if (!documentPath.Exists)
+            {
+                using (WebClient client = new WebClient())
+                {
+                    client.DownloadFile(Remote.GetDocumentUri(DocumentId), documentPath.FullName);
+                }
+            }
+        }
 
 		private IRfcIndexEntry _model;
 	}

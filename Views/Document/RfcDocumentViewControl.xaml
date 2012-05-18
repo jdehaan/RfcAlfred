@@ -6,6 +6,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <RichTextBox HorizontalAlignment="Stretch" Name="richTextBox" VerticalAlignment="Stretch" IsReadOnly="True"
+                     VerticalScrollBarVisibility="Visible"
+                     FontFamily="Courier New" FontSize="12">
+        </RichTextBox>
     </Grid>
 </UserControl>

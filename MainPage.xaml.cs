@@ -23,6 +23,7 @@ namespace Alfred
 		{
 			InitializeComponent();
 			InitializeOrUpdateIndex();
+            rfcIndexList.DocumentContainer = rfcDocuments;
 		}
 
 		private void Page_Loaded(object sender, RoutedEventArgs e)

@@ -114,6 +114,7 @@
     <Compile Include="ViewModels\Document\RfcDocumentViewModel.cs" />
     <Compile Include="ViewModels\Index\RfcIndexEntryViewModel.cs" />
     <Compile Include="ViewModels\Index\RfcIndexViewModel.cs" />
+    <Compile Include="Views\Document\IRfcDocumentContainer.cs" />
     <Compile Include="Views\Document\RfcDocumentViewControl.xaml.cs">
       <DependentUpon>RfcDocumentViewControl.xaml</DependentUpon>
     </Compile>
