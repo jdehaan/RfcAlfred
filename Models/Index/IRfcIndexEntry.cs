@@ -1,28 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using Alfred.Models.Index.Rfc;
 
 namespace Alfred.Models.Index
 {
-	public interface IRfcIndexEntry
-	{
-		string DocumentId { get; }
+    public interface IRfcIndexEntry
+    {
+        string DocumentId { get; }
 
-		string Date { get; }
+        string Date { get; }
 
-		string Title { get; }
+        string Title { get; }
 
-		ICollection<string> IsAlso { get; }
+        ICollection<string> IsAlso { get; }
 
-		ICollection<string> SeeAlso { get; }
+        ICollection<string> SeeAlso { get; }
 
-		ICollection<string> Keywords { get; }
+        ICollection<string> Keywords { get; }
 
-		string Abstract { get; }
+        string Abstract { get; }
 
-		Rfc.RfcStatus CurrentStatus { get; }
+        RfcStatus CurrentStatus { get; }
 
-		Rfc.RfcStatus PublicationStatus { get; }
-	}
+        RfcStatus PublicationStatus { get; }
+    }
 }

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Alfred.Models.Document
+﻿namespace Alfred.Models.Document
 {
-	interface IRfcDocument
-	{
-	}
+    internal interface IRfcDocument
+    {
+    }
 }

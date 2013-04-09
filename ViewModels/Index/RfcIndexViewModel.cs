@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 using Alfred.Models.Index;
 
 namespace Alfred.ViewModels.Index
 {
-	public class RfcIndexViewModel
-	{
-		public RfcIndexViewModel(RfcIndex index)
-		{
-			_model = index;
-		}
+    public class RfcIndexViewModel
+    {
+        private readonly RfcIndex _model;
 
-		public IEnumerable<RfcIndexEntryViewModel> Entries
-		{
-			get
-			{
-				return _model.Entries.Select(x => new RfcIndexEntryViewModel(x));
-			}
-		}
+        public RfcIndexViewModel(RfcIndex index)
+        {
+            _model = index;
+        }
 
-		private RfcIndex _model;
-	}
+        public IEnumerable<RfcIndexEntryViewModel> Entries
+        {
+            get { return _model.Entries.Select(x => new RfcIndexEntryViewModel(x)); }
+        }
+    }
 }

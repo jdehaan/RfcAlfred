@@ -1,32 +1,33 @@
 ﻿<UserControl x:Class="Alfred.Views.Index.RfcIndexListControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:almi="clr-namespace:Alfred.ViewModels.Index"
-             xmlns:alvi="clr-namespace:Alfred.Views.Index"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="640">
     <Grid>
         <Grid.Resources>
-            <almi:RfcStatusToIconFilenameConverter x:Key="IconConverter"/>
+            <almi:RfcStatusToIconFilenameConverter x:Key="IconConverter" />
         </Grid.Resources>
         <ListView
             Name="list"
             VirtualizingStackPanel.IsVirtualizing="True"
             VirtualizingStackPanel.VirtualizationMode="Recycling"
             ScrollViewer.IsDeferredScrollingEnabled="False"
-            ItemsSource="{Binding Entries}" SelectionChanged="list_SelectionChanged" PreviewMouseDoubleClick="list_PreviewMouseDoubleClick">
+            ItemsSource="{Binding Entries}" SelectionChanged="list_SelectionChanged"
+            PreviewMouseDoubleClick="list_PreviewMouseDoubleClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="S" Width="Auto">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Width="16" Height="16" Source="{Binding CurrentStatus, Converter={StaticResource IconConverter}}" />
+                                <Image Width="16" Height="16"
+                                       Source="{Binding CurrentStatus, Converter={StaticResource IconConverter}}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Id" Width="Auto" 
+                    <GridViewColumn Header="Id" Width="Auto"
                                     DisplayMemberBinding="{Binding DocumentId}" />
                     <GridViewColumn Header="Date" Width="100"
                                     DisplayMemberBinding="{Binding Date}" />
@@ -36,7 +37,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Vertical">
-                                    <ItemsControl ItemsSource="{Binding Path=IsAlso}"/>
+                                    <ItemsControl ItemsSource="{Binding Path=IsAlso}" />
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -45,7 +46,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Vertical">
-                                    <ItemsControl ItemsSource="{Binding Path=SeeAlso}"/>
+                                    <ItemsControl ItemsSource="{Binding Path=SeeAlso}" />
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

@@ -85,7 +85,7 @@
     <!-- Enumerated list of status types -->
     <xsd:simpleType name="status">
 	<xsd:restriction base="xsd:string">
-	    <xsd:enumeration value="STANDARD"/>
+	    <xsd:enumeration value="INTERNET STANDARD"/>
 	    <xsd:enumeration value="DRAFT STANDARD"/>
 	    <xsd:enumeration value="PROPOSED STANDARD"/>
 	    <xsd:enumeration value="UNKNOWN"/>
@@ -103,6 +103,7 @@
 	    <xsd:enumeration value="ASCII"/>
 	    <xsd:enumeration value="PS"/>
 	    <xsd:enumeration value="PDF"/>
+	    <xsd:enumeration value="TGZ"/>
 	</xsd:restriction>
     </xsd:simpleType>
 

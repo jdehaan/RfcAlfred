@@ -1,39 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Reflection;
 
-namespace Alfred
+namespace Alfred.Storage
 {
-	static class Storage
-	{
-		/// <summary>
-		/// Base directory for the storage of data
-		/// </summary>
-		public static DirectoryInfo BaseDirectory
-		{
-			get
-			{
-				if (_baseDirectory == null)
-				{
-					Assembly a = Assembly.GetEntryAssembly();
-					_baseDirectory = new DirectoryInfo(Path.GetDirectoryName(a.Location));
-					CreateSubDirectories();
-				}
-				return _baseDirectory;
-			}
-		}
+    internal static class Storage
+    {
+        private static DirectoryInfo _baseDirectory;
 
-		public static FileInfo IndexPath
-		{
-			get
-			{
-				String path = Path.Combine(BaseDirectory.FullName, "Index", "rfc-index.xml");
-				return new FileInfo(path);
-			}
-		}
+        /// <summary>
+        ///     Base directory for the storage of data
+        /// </summary>
+        public static DirectoryInfo BaseDirectory
+        {
+            get
+            {
+                if (_baseDirectory == null)
+                {
+                    Assembly a = Assembly.GetEntryAssembly();
+                    _baseDirectory = new DirectoryInfo(Path.GetDirectoryName(a.Location));
+                    CreateSubDirectories();
+                }
+                return _baseDirectory;
+            }
+        }
+
+        public static FileInfo IndexPath
+        {
+            get
+            {
+                String path = Path.Combine(BaseDirectory.FullName, "Index", "rfc-index.xml");
+                return new FileInfo(path);
+            }
+        }
 
         public static FileInfo GetDocumentPath(String documentId)
         {
@@ -45,15 +44,13 @@ namespace Alfred
         }
 
         private static void CreateSubDirectories()
-		{
-			String dir = _baseDirectory.FullName;
-			Directory.CreateDirectory(Path.Combine(dir, "Index"));
-			Directory.CreateDirectory(Path.Combine(dir, "Documents", "bcp"));
+        {
+            String dir = _baseDirectory.FullName;
+            Directory.CreateDirectory(Path.Combine(dir, "Index"));
+            Directory.CreateDirectory(Path.Combine(dir, "Documents", "bcp"));
             Directory.CreateDirectory(Path.Combine(dir, "Documents", "std"));
             Directory.CreateDirectory(Path.Combine(dir, "Documents", "rfc"));
             Directory.CreateDirectory(Path.Combine(dir, "Documents", "fyi"));
         }
-
-		private static DirectoryInfo _baseDirectory;
-	}
+    }
 }
